@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "8375ea42-829d-4ac0-9428-09cb2cdcefeb",
+		"name": "Generic Config Service Rq Samples",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Config",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "645ceca0-325f-4009-91e1-4dd9ca9ff7ab",
+						"exec": [
+							"// Random age.\r",
+							"pm.environment.set(\"age\", _.random(1, 10));\r",
+							"// Random email address.\r",
+							"pm.environment.set(\"email\", _.random(1, 99) + \"@myDomain.com\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Test-{{$timestamp}}\",\r\n  \"age\": {{age}},\r\n  \"emailAddress\": \"{{email}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:10090/student/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10090",
+					"path": [
+						"student",
+						"save"
+					]
+				},
+				"description": "Save student details in the h2 database."
+			},
+			"response": []
+		},
+		{
+			"name": "Update Config",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f21e852d-50d5-44aa-97c3-cf3f8fa00d48",
+						"exec": [
+							"// Random age.\r",
+							"pm.environment.set(\"age\", _.random(1, 10));\r",
+							"// Random email address.\r",
+							"pm.environment.set(\"email\", _.random(1, 99) + \"@myDomain.com\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Test-{{$timestamp}}\",\r\n  \"age\": {{age}},\r\n  \"emailAddress\": \"{{email}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:10090/student/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10090",
+					"path": [
+						"student",
+						"save"
+					]
+				},
+				"description": "Save student details in the h2 database."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Config",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d441a696-1750-46d7-a249-2f03ad2bb509",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.jcg.api.v1+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:10090/config/get/65",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10090",
+					"path": [
+						"config",
+						"get",
+						"65"
+					]
+				},
+				"description": "Get all students from the h2 database."
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Config",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "bb289d9b-b0e2-42e3-a0cb-f23633473882",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.jcg.api.v1+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:10090/config/get/65",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10090",
+					"path": [
+						"config",
+						"get",
+						"65"
+					]
+				},
+				"description": "Get all students from the h2 database."
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
