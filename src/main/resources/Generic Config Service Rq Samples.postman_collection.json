@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "8375ea42-829d-4ac0-9428-09cb2cdcefeb",
 		"name": "Generic Config Service Rq Samples",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
@@ -27,25 +27,14 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Test-{{$timestamp}}\",\r\n  \"age\": {{age}},\r\n  \"emailAddress\": \"{{email}}\"\r\n}",
+					"raw": " {\r\n    \"name\": \"Aeron2\",\r\n    \"age\": 14,\r\n    \"cars\": {\r\n      \"car1\": \"Herrier\",\r\n      \"car2\": \"Royal Enfield\",\r\n      \"car3\": \"Jinks\"\r\n    }\r\n  }\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": {
-					"raw": "http://localhost:10090/student/save",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "10090",
-					"path": [
-						"student",
-						"save"
-					]
-				},
+				"url": "http://localhost:10090/config/save",
 				"description": "Save student details in the h2 database."
 			},
 			"response": []
@@ -79,18 +68,7 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "http://localhost:10090/student/save",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "10090",
-					"path": [
-						"student",
-						"save"
-					]
-				},
+				"url": "http://localhost:10090/student/save",
 				"description": "Save student details in the h2 database."
 			},
 			"response": []
@@ -130,19 +108,7 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "http://localhost:10090/config/get/65",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "10090",
-					"path": [
-						"config",
-						"get",
-						"65"
-					]
-				},
+				"url": "http://localhost:10090/config/get/65",
 				"description": "Get all students from the h2 database."
 			},
 			"response": []
@@ -182,19 +148,7 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "http://localhost:10090/config/get/65",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "10090",
-					"path": [
-						"config",
-						"get",
-						"65"
-					]
-				},
+				"url": "http://localhost:10090/config/get/65",
 				"description": "Get all students from the h2 database."
 			},
 			"response": []
