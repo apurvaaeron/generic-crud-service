@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 
 @RestController
 public class ConfigController {
@@ -17,13 +16,13 @@ public class ConfigController {
 	ConfigService service;
 
 	@PostMapping(value= "/config/save")
-	public int update(final @RequestBody @Valid String config) {
+	public int update(final @RequestBody String config) {
 		log.info("Saving config details in the database.");
 		return service.save(config);
 	}
 
 	@PostMapping(value= "/config/save/{id}")
-	public int create(final @PathVariable int id,  final @RequestBody @Valid String config) {
+	public int create(final @PathVariable int id,  final @RequestBody String config) {
 		log.info("Saving config details in the database.");
 		return service.save(id, config);
 	}
